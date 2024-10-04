@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.png" />
+  <title>Sepatukidos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            primary: '#D2B48C',
+            secondary: '#F0F0F0',
+            colorText: '#475569',
+            button: '#FBAB2F'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2CWZ0VDVY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y2CWZ0VDVY');
+  </script>
+</head>
+<body class="font-poppins">
+
+  <!-- background -->
+  <div class="fixed -z-10 background left-0 top-0 right-0 bottom-0">
+    <img src="assets/pattern.png" class="w-full h-full object-cover">
+  </div>
+
+  <!-- navbar -->
+  <div class="glass-effect bg-white/30 border-white/40 fixed left-10 top-2 right-10 z-10 rounded-full">
+    <div class="relative container mx-auto flex items-center justify-between py-[11px] px-5">
+      <div class="logo text-[30px] text-button font-bold flex items-center gap-x-2">
+        <img src="assets/logo.png" alt="" class="w-[60px] hidden md:block">
+        Sepatukidos
+      </div>
+      <nav class="hidden lg:flex font-medium items-center md:gap-x-5 lg:gap-x-9 text-slate-600">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#best-seller">Best Seller</a>
+        <a href="#products">Products</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class=" bg-button px-5 py-1 rounded-full text-white">Contact</a>
+      </nav>
+      <div class="menu cursor-pointer w-[40px] h-[40px] bg-white flex lg:hidden items-center justify-center rounded-md">
+        <img src="assets/menu.svg" class="w-[30px]">
+      </div>
+      <div id="toggle-content" class="absolute right-5 top-16 w-[200px] rounded-lg bg-white py-3 ">
+        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#home">Home</a>
+        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#about">About</a>
+        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#best-seller">Best Seller</a>
+        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#products">Products</a>
+        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#testimoni">Testimoni</a>
+        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#faq">FAQ</a>
+        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <!-- navbar end -->
+
+  <!-- hero section -->
+  <div id="home" class="hero py-9 pt-[75px] bg-transparent text-slate-900">
+    <div class="container p-5 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:h-[90vh] py-[200px] lg:py-0">
+      <div class="flex items-center justify-center lg:justify-start text-center lg:text-start">
+        <div class="title mb-9 lg:mb-0">
+          <h2 data-aos="fade-up" class="font-bold text-[50px]">Upgrade <span class="text-button">Look</span>-mu <br> No Overprice.</h2>
+          <p data-aos="fade-up" data-aos-delay="50" class="text-[18px] my-5 font-medium">Sempurnakan Penampilan dengan Sepatu Thrifting Unik, <br> Gaya Keren, Harga Terjangkau!</p>
+          <a href="#best-seller">
+            <button data-aos="fade-up" data-aos-delay="100" class="px-5 py-2 font-medium bg-button text-white text-xl rounded-full">Beli Sekarang</button>
+          </a>
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="box-image flex gap-2">
+          <div class="img-left mt-3">
+            <div data-aos="fade-up" class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
+              <img src="assets/products/6.jpg" class="w-full h-full object-cover">
+            </div>
+            <div data-aos="fade-up" data-aos-delay="50" class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
+              <img src="assets/products/2.jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="img-right mt-[70px]">
+            <div data-aos="fade-up" data-aos-delay="100" class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
+              <img src="assets/products/3.jpg" class="w-full h-full object-cover">
+            </div>
+            <div data-aos="fade-up" data-aos-delay="150" class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
+              <img src="assets/products/4.jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- hero section end -->
+
+  <!-- about section -->
+  <div id="about" class="about bg-white">
+    <div class="container p-5 px-5 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:h-screen">
+      <div class="flex items-center justify-center">
+        <div class="box-image flex gap-2">
+          <div class="img-left mt-5">
+            <div data-aos="fade-up" class="img border-[2px] border-secondary w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[240px] lg:h-[250px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
+              <img src="assets/products/5.jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="50" class="img-right mt-[90px]">
+            <div class="img border-[2px] border-secondary w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[240px] lg:h-[250px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
+              <img src="assets/products/6.jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <div class="title px-5">
+          <h2 data-aos="fade-up" class="font-bold text-[20px] sm:text-[30px] lg:text-[40px]">Selamat Datang di <span class="text-button">SepatuKidos</span></h2>
+          <p data-aos="fade-up" class="text-[15px] sm:text-normal lg:text-[18px] my-5">Selamat datang di SepatuKidos, destinasi terbaik bagi para pencinta sepatu thrifting! Kami menghadirkan berbagai pilihan sepatu berkualitas dengan harga yang ramah di kantong. Setiap produk kami dipilih dengan cermat, memastikan Anda mendapatkan sepatu yang tidak hanya keren, tapi juga nyaman dan unik.</p>
+          <button id="whatsappButton" data-aos="fade-up" class="whatsappButton px-7 py-2 font-medium bg-button text-white text-xl rounded-full mt-2">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- about section end -->
+
+  <!-- best seller section -->
+  <div id="best-seller" class="best-seller bg-secondary">
+    <div class="container p-5 mx-auto py-[100px]">
+      <h2 class="font-medium text-[30px] text-center mb-9">Best Sellers</h2>
+      <div class="list-product flex items-center flex-wrap justify-center gap-5">
+        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/7.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Adidas Adipren</h4>
+            <p class="text-[15px]">Ukuran 37 1/3 <br> Insole 23 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp112.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/8.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">MLB Chunky Clasic</h4>
+            <p class="text-[15px]">Ukuran 37.5 <br> Insole 23.5 <br> Made in Korea</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp280.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/20.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Nike Blazer</h4>
+            <p class="text-[15px]">Ukuran 38 <br> Insole 24 <br> Made in India</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp140.000</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- best seller section end -->
+  
+  <!-- products section -->
+  <div id="products" class="products bg-white">
+    <div class="container p-5 mx-auto py-[100px]">
+      <h2 class="font-medium text-[30px] text-center mb-9">Products</h2>
+      <div class="list-product flex items-center justify-center flex-wrap gap-5">
+        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/10.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Adidas Sambarose</h4>
+            <p class="text-[15px]">Ukuran 37 1/3 <br> Insole 23.5 <br> Made in Germany</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp250.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/11.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Jordan x traviscott</h4>
+            <p class="text-[15px]">Ukuran 38.5 <br> Insole 24 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp87.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/12.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Nike SB green apple</h4>
+            <p class="text-[15px]">Ukuran 38.5 <br> Insole 24.5 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp87.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/13.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Adidas Futro ixr</h4>
+            <p class="text-[15px]">Ukuran 37 1/3 <br> Insole 23 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp87.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/14.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Air Jordan Lagacy</h4>
+            <p class="text-[15px]">Ukuran 37 1/3 <br> Insole 23 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp270.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/15.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Adidas Yeezy 350</h4>
+            <p class="text-[15px]">Ukuran 36 <br> Insole 22 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp280.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/16.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Salomon XT-Quest</h4>
+            <p class="text-[15px]">Ukuran 38 <br> Insole 23.5 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp500.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/17.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">NB Bape</h4>
+            <p class="text-[15px]">Ukuran 37 1/3 <br> Insole 23 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp300.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/18.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Union Cortez LA</h4>
+            <p class="text-[15px]">Ukuran 37.5 <br> Insole 23.5 <br> Made in Indonesia</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp290.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/21.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Adidas Cano Alto</h4>
+            <p class="text-[15px]">Ukuran 38 2/3 <br> Insole 24 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp170.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/22.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">NB 1530 England</h4>
+            <p class="text-[15px]">Ukuran 38 <br> Insole 23.5 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp280.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/23.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Nike Air More Money</h4>
+            <p class="text-[15px]">Ukuran 39 <br> Insole 25 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp280.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/24.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Adidas Ozweego</h4>
+            <p class="text-[15px]">Ukuran 39 1/3 <br> Insole 24.5 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp150.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/25.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">AF 1 High Nautical Red</h4>
+            <p class="text-[15px]">Ukuran 39 <br> Insole 25 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp200.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/26.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Adidas Easymint</h4> 
+            <p class="text-[15px]">Ukuran 37 1/3 <br> Insole 23 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp300.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/27.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Nike WMNS Kaishi</h4>
+            <p class="text-[15px]">Ukuran 37 1/3 <br> Insole 23 <br> Made in China</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp150.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/28.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">NB 990</h4>
+            <p class="text-[15px]">Ukuran 37 <br> Insole 22.5 <br> Made in USA</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp350.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/29.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">NB 2002R</h4>
+            <p class="text-[15px]">Ukuran 37 <br> Insole 22.5 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp350.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/30.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Jordan 1 Low Tie Dye</h4>
+            <p class="text-[15px]">Ukuran 37 <br> Insole 23.5 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp200.000</h5>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
+          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="assets/products/31.jpg" class="w-full h-full object-cover">
+          </div>
+          <div class="product-desc">
+            <h4 class="font-medium text-xl">Nike SB Dunk Low Pulm</h4>
+            <p class="text-[15px]">Ukuran 37.5 <br> Insole 23.5 <br> Made in Vietnam</p>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
+            <h5 class="font-medium text-lg">Rp220.000</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- products section end -->
+
+  <!-- testimoni section -->
+  <div id="testimoni" class="testimoni bg-colorText">
+    <div class="container p-5 mx-auto py-[100px]">
+      <h2 class="font-medium text-[30px] text-center mb-9 text-white">Testimoni</h2>
+      <div class="list-testimoni flex flex-col justify-center items-center">
+        <div class="list-1 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:me-[100px]">
+          <div data-aos="fade-up" class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary">
+            <div class="profile flex items-center gap-2">
+              <div class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden">
+                <img src="assets/profile.jpg" class="w-full h-full object-cover">
+              </div>
+              <div class="profile-desc">
+                <h5 class="font-medium text-lg">Refan</h5>
+                <div class="rating flex items-center gap-1">mbuh</div>
+              </div>
+            </div>
+            <div class="text mt-2">
+              <p>Belanja di sepatukidos nggak pernah mengecewakan! Sepatunya selalu dalam kondisi bagus, meskipun thrifting. Harganya juga ramah di kantong, pokoknya rekomendasi banget!</p>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="50" class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary">
+            <div class="profile flex items-center gap-2">
+              <div class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden">
+                <img src="assets/profile.jpg" class="w-full h-full object-cover">
+              </div>
+              <div class="profile-desc">
+                <h5 class="font-medium text-lg">Cindy</h5>
+                <div class="rating flex items-center gap-1">mbuh</div>
+              </div>
+            </div>
+            <div class="text mt-2">
+              <p>Suka banget sama koleksi sepatu di sepatukidos! Barangnya selalu berkualitas, nyaman dipakai, dan modelnya jarang ada di pasaran. Pasti akan belanja lagi!</p>
+            </div>
+          </div>
+        </div>
+        <div class="list-2 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:ms-[100px] mt-2">
+          <div data-aos="fade-up" class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary">
+            <div class="profile flex items-center gap-2">
+              <div class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden">
+                <img src="assets/profile.jpg" class="w-full h-full object-cover">
+              </div>
+              <div class="profile-desc">
+                <h5 class="font-medium text-lg">Ika</h5>
+                <div class="rating flex items-center gap-1">mbuh</div>
+              </div>
+            </div>
+            <div class="text mt-2">
+              <p>Pelayanannya cepat dan ramah! Sepatuku sampai tepat waktu dan sesuai deskripsi. Keren banget, sepatukidos!</p>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="50" class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary">
+            <div class="profile flex items-center gap-2">
+              <div class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden">
+                <img src="assets/profile.jpg" class="w-full h-full object-cover">
+              </div>
+              <div class="profile-desc">
+                <h5 class="font-medium text-lg">Ajis</h5>
+                <div class="rating flex items-center gap-1">mbuh</div>
+              </div>
+            </div>
+            <div class="text mt-2">
+              <p>Sepatu dari sepatukidos benar-benar berkualitas, nggak kalah sama yang baru. Aku bisa tampil stylish tanpa perlu keluar banyak uang. Highly recommended!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- testimoni section end -->
+
+  <!-- FAQ section -->
+  <div id="faq" class="faq bg-white">
+    <div class="container p-5 mx-auto py-[50px]">
+      <h4 class="font-medium text-[30px] text-center mb-5">FAQ</h4>
+      <div class="faq-box grid grid-cols-1 lg:grid-cols-2">
+        <div class="left p-5">
+          <div data-aos="fade-up" class="faq-item mb-5">
+            <h5 class="font-medium text-xl">Apakah ada program diskon atau promo khusus?</h5>
+            <p class="text-[15px]">Ya, sepatukidos sering mengadakan promosi dan diskon khusus untuk pelanggan.</p>
+          </div>
+          <div data-aos="fade-up" class="faq-item mb-5">
+            <h5 class="font-medium text-xl">Di mana saya bisa membeli sepatu sepatukidos?</h5>
+            <p class="text-[15px]">Sepatu sepatukidos dapat dibeli secara online melalui website resmi atau platform e-commerce.</p>
+          </div>
+          <div data-aos="fade-up" class="faq-item mb-5">
+            <h5 class="font-medium text-xl">Berapa kisaran harga sepatu sepatukidos?</h5>
+            <p class="text-[15px]">Harga sepatu sepatukidos sangat terjangkau, mulai dari Rp150.000.</p>
+          </div>
+        </div>
+        <div class="right p-5">
+          <div data-aos="fade-up" class="faq-item mb-5">
+            <h5 class="font-medium text-xl">Bagaimana kualitas sepatu dari sepatukidos?</h5>
+            <p class="text-[15px]">Sepatu sepatukidos terbuat dari bahan berkualitas tinggi dan nyaman dipakai.</p>
+          </div>
+          <div data-aos="fade-up" class="faq-item mb-5">
+            <h5 class="font-medium text-xl">Apakah sepatukidos hanya untuk wanita?</h5>
+            <p class="text-[15px]">Ya, sepatukidos khusus dirancang untuk para wanita.</p>
+          </div>
+          <div data-aos="fade-up" class="faq-item mb-5">
+            <h5 class="font-medium text-xl">Ukuran apa saja yang tersedia?</h5>
+            <p class="text-[15px]">Ukuran yang tersedia mulai dari 36 hingga 40.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FAQ section end -->
+
+  <!-- contact section -->
+  <div id="contact" class="contact bg-colorText text-white">
+    <div class="container p-5 mx-auto py-[170px]">
+      <h5 class="font-medium text-[30px] text-center mb-8">Contact</h5>
+      <div class="flex flex-col justify-center items-center">
+        <div class="text-center">
+          <h5 data-aos="fade-up" class="font-medium text-2xl">Address</h5>
+          <h6 data-aos="fade-up" class="text-lg my-4 font-medium">Vintya/Pipin (Toko Fotocopy Perdana)
+          </h6>
+          <p data-aos="fade-up">Jalan Jendral Sudirman No.43, RT/17 RW/04, Kel. Kroya , Kec. Kroya , Kab. Cilacap.</p>
+        </div>
+        <div data-aos="fade-up" class="social-media-contact flex flex-wrap px-15 md:px-0 items-center gap-x-[15px] mt-[30px]">
+          <div class="instagram flex items-center gap-x-2">
+            <img src="assets/instagram.png" alt="" class="w-[20px] lg:w-[40px]">
+            <a href="https://www.instagram.com/sepatu.kidos?igsh=aHFxMmZpc3M4b3lx" class="font-medium text-[14px] sm:text-normal">Instagram</a>
+          </div>
+          <div class="whatsappButton flex items-center gap-x-2">
+            <img src="assets/whatsapp.png" alt="" class="w-[20px] lg:w-[40px]">
+            <a href="#" class="font-medium text-[14px] sm:text-normal">Whatsapp</a>
+          </div>
+          <div class="shopee flex items-center gap-x-2">
+            <img src="assets/shope.png" alt="" class="w-[30px] lg:w-[50px]">
+            <a href="#" class="font-medium text-[14px] sm:text-normal">Shopee</a>
+          </div>
+          <div class="tiktok flex items-center gap-x-2">
+            <img src="assets/tiktok.png" alt="" class="w-[20px] lg:w-[40px]">
+            <a href="https://www.tiktok.com/@sepatukidos?_t=8pjN6SAmpdf&_r=1" class="font-medium text-[14px] sm:text-normal">Tiktok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- contact section end -->
+
+  <!-- footer section -->
+  <!-- <footer class="bg-primary">
+    <div class="container p-5 mx-auto flex items-center py-5">
+      <p class="text-[14px]">&copy; Copyright 2024 JymDev. All rights reserved</p>
+    </div>
+  </footer> -->
+  <!-- footer section end -->
+  
+  <!-- script.js -->
+   <script src="script.js"></script>
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+     AOS.init();
+   </script>
+</body>
+</html>

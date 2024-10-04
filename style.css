@@ -1,0 +1,43 @@
+/* Gaya scrollbar vertikal */
+::-webkit-scrollbar {
+  width: 5px; /* lebar scrollbar */
+}
+
+/* Gaya thumb (handle) scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9; /* warna thumb */
+  border-radius: 4px; /* bentuk thumb */
+}
+
+/* Gaya track (jalur) scrollbar */
+::-webkit-scrollbar-track {
+  background-color: #ffffff; /* warna track */
+}
+
+.bg-primary {
+  /* background-color: #BBB2A4; */
+  background-color: #fff;
+}
+
+.bg-secondary {
+  /* background-color: #F4EEE9; */
+  background-color: #01CF87;
+}
+
+/* .text-secondary {
+  background-color: #F4EEE9;
+} */
+
+.hidden-menu {
+  display: none;
+}
+
+.flex-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
