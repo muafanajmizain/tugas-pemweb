@@ -11,7 +11,7 @@
 
 /* Gaya track (jalur) scrollbar */
 ::-webkit-scrollbar-track {
-  background-color: #ffffff; /* warna track */
+  background-color: #ffffff; 
 }
 
 .bg-primary {
