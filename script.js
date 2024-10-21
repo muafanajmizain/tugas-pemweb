@@ -21,3 +21,28 @@ whatsappButtons.forEach(button => {
     window.open(url, '_blank');
   };
 });
+
+
+// Register
+ // Menggunakan Axios untuk mengirim data dengan POST
+ document.getElementById('registration-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Mencegah pengiriman form secara default
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Mengirim data menggunakan Axios POST
+  axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/login', {
+      username: username,
+      email: email,
+      password: password
+  })
+  .then(function (response) {
+      // Menampilkan respon di elemen dengan id "output"
+      //document.getElementById('output').textContent = JSON.stringify(response.data, null, 2);
+  })
+  .catch(function (error) {
+      console.error('Terjadi kesalahan:', error);
+  });
+});
