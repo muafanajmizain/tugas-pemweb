@@ -25,24 +25,111 @@ whatsappButtons.forEach(button => {
 
 // Register
  // Menggunakan Axios untuk mengirim data dengan POST
- document.getElementById('registration-form').addEventListener('submit', function(event) {
+//  document.getElementById('registration-form').addEventListener('submit', function(event) {
+//   event.preventDefault(); // Mencegah pengiriman form secara default
+
+//   const username = document.getElementById('username').value;
+//   const email = document.getElementById('email').value;
+//   const password = document.getElementById('password').value;
+
+//   // Mengirim data menggunakan Axios POST
+//   axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/login', {
+//       username: username,
+//       email: email,
+//       password: password
+//   })
+//   .then(function (response) {
+//       // Menampilkan respon di elemen dengan id "output"
+//       //document.getElementById('output').textContent = JSON.stringify(response.data, null, 2);
+//   })
+//   .catch(function (error) {
+//       console.error('Terjadi kesalahan:', error);
+//   });
+// });
+
+// Fungsi untuk toggle visibility password
+function togglePasswordVisibility(id) {
+  const input = document.getElementById(id);
+  const icon = document.getElementById(`toggle-${id}-icon`);
+
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.classList.remove('fa-eye');
+    icon.classList.add('fa-eye-slash');
+  } else {
+    input.type = 'password';
+    icon.classList.remove('fa-eye-slash');
+    icon.classList.add('fa-eye');
+  }
+}
+
+// Script untuk Pendaftaran
+document.getElementById('registration-form').addEventListener('submit', function (event) {
   event.preventDefault(); // Mencegah pengiriman form secara default
 
-  const username = document.getElementById('username').value;
+  const nama = document.getElementById('nama').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
+  const passwordConfirm = document.getElementById('password-confirm').value;
 
-  // Mengirim data menggunakan Axios POST
-  axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/login', {
-      username: username,
-      email: email,
-      password: password
+  if (password !== passwordConfirm) {
+    alert('Kata sandi dan konfirmasi kata sandi tidak cocok.');
+    return;
+  }
+
+  // Mengirim data pendaftaran ke Mock API atau server
+  axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/register', {
+    nama: nama,
+    email: email,
+    password: password
   })
-  .then(function (response) {
-      // Menampilkan respon di elemen dengan id "output"
-      //document.getElementById('output').textContent = JSON.stringify(response.data, null, 2);
-  })
-  .catch(function (error) {
-      console.error('Terjadi kesalahan:', error);
-  });
+    .then(function (response) {
+      alert('Pendaftaran berhasil! Silakan login.');
+      // Tampilkan form login
+      document.getElementById('registration-section').classList.add('hidden');
+      document.getElementById('login-section').classList.remove('hidden');
+    })
+    .catch(function (error) {
+      console.error('Terjadi kesalahan saat pendaftaran:', error);
+    });
 });
+
+// Script untuk Login
+document.getElementById('login-form').addEventListener('submit', function (event) {
+  event.preventDefault(); // Mencegah pengiriman form secara default
+
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+
+  // Cek data login melalui Mock API atau server
+  axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/login', {
+    email: email,
+    password: password
+  })
+    .then(function (response) {
+      if (response.data.success) {
+        alert('Login berhasil!');
+        // Arahkan ke halaman utama website setelah login berhasil
+        window.location.href = "/home";
+      } else {
+        alert('Email atau kata sandi salah!');
+      }
+    })
+    .catch(function (error) {
+      console.error('Terjadi kesalahan saat login:', error);
+    });
+});
+
+
+ 
+
+document.querySelector('a[href="#login-section"]').addEventListener('click', function() {
+  document.getElementById('registration-section').classList.add('hidden');
+  document.getElementById('login-section').classList.remove('hidden');
+});
+
+document.querySelector('a[href="#registration-section"]').addEventListener('click', function() {
+  document.getElementById('login-section').classList.add('hidden');
+  document.getElementById('registration-section').classList.remove('hidden');
+});
+
