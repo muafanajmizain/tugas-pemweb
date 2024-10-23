@@ -78,8 +78,8 @@ document.getElementById('registration-form').addEventListener('submit', function
   }
 
   // Mengirim data pendaftaran ke Mock API atau server
-  axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/register', {
-    nama: nama,
+  axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/login', {
+    username: nama,
     email: email,
     password: password
   })
@@ -92,6 +92,7 @@ document.getElementById('registration-form').addEventListener('submit', function
     .catch(function (error) {
       console.error('Terjadi kesalahan saat pendaftaran:', error);
     });
+  
 });
 
 // Script untuk Login
@@ -107,10 +108,16 @@ document.getElementById('login-form').addEventListener('submit', function (event
     password: password
   })
     .then(function (response) {
-      if (response.data.success) {
-        alert('Login berhasil!');
-        // Arahkan ke halaman utama website setelah login berhasil
-        window.location.href = "/home";
+      if (response.data) {
+        // Di sini kamu bisa menyesuaikan logika untuk mengecek hasil respons
+        if (response.data.email === email && response.data.password === password) {
+          alert('Login berhasil!');
+          // Arahkan ke halaman utama website setelah login berhasil
+          document.getElementById('login-section').classList.add('hidden');
+          document.getElementById('registration-section').classList.add('hidden');
+        } else {
+          alert('Email atau kata sandi salah!');
+        }
       } else {
         alert('Email atau kata sandi salah!');
       }
