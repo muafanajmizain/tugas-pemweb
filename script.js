@@ -16,7 +16,7 @@ const whatsappButtons = document.querySelectorAll('.whatsappButton');
 whatsappButtons.forEach(button => {
   button.onclick = function() {
     const phoneNumber = "6287790531215"; // Ganti dengan nomor telepon Anda
-    const message = "Halo min, saya ingin bertanya tentang produk Anda."; // Ganti dengan pesan default Anda
+    const message = "Halo min, saya ingin bertanya tentang produk di VentelaShoes."; // Ganti dengan pesan default Anda
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
@@ -126,9 +126,6 @@ document.getElementById('login-form').addEventListener('submit', function (event
       console.error('Terjadi kesalahan saat login:', error);
     });
 });
-
-
- 
 
 document.querySelector('a[href="#login-section"]').addEventListener('click', function() {
   document.getElementById('registration-section').classList.add('hidden');
