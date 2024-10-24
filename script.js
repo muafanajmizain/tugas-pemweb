@@ -86,8 +86,8 @@ document.getElementById('registration-form').addEventListener('submit', function
     .then(function (response) {
       alert('Pendaftaran berhasil! Silakan login.');
       // Tampilkan form login
-      document.getElementById('registration-section').classList.add('hidden');
       document.getElementById('login-section').classList.remove('hidden');
+      document.getElementById('registration-section').classList.add('hidden');
     })
     .catch(function (error) {
       console.error('Terjadi kesalahan saat pendaftaran:', error);
@@ -114,7 +114,7 @@ document.getElementById('login-form').addEventListener('submit', function (event
           alert('Login berhasil!');
           // Arahkan ke halaman utama website setelah login berhasil
           document.getElementById('login-section').classList.add('hidden');
-          document.getElementById('registration-section').classList.add('hidden');
+          document.getElementById('registration-section').classList.add('hidden')
         } else {
           alert('Email atau kata sandi salah!');
         }

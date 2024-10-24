@@ -654,47 +654,6 @@
 </head>
 <body>
 
-    <!-- Form Register & Login -->
-    <div id="registration-section" class="min-h-screen flex items-center justify-center bg-gray-100 z-50 fixed left-0 right-0 bottom-0 top-0">
-        <div class="bg-white p-8 rounded-lg shadow-xl w-96">
-            <h2 class="text-2xl font-bold text-center mb-6">Daftar Akun</h2>
-            <form id="registration-form">
-                <div class="mb-4">
-                    <label for="nama" class="block text-gray-700">Nama Lengkap:</label>
-                    <input type="text" id="nama" placeholder="Masukkan nama lengkap" required
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-primary transition duration-200">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email:</label>
-                    <input type="email" id="email" placeholder="Masukkan email" required
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-primary transition duration-200">
-                </div>
-                <div class="mb-4 relative">
-                    <label for="password" class="block text-gray-700">Kata Sandi:</label>
-                    <input type="password" id="password" placeholder="Masukkan kata sandi" required
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-primary transition duration-200">
-                    <span class="toggle-icon" onclick="togglePasswordVisibility('password')">
-                        <i id="toggle-password-icon" class="fas fa-eye"></i>
-                    </span>
-                </div>
-                <div class="mb-6 relative">
-                    <label for="password-confirm" class="block text-gray-700">Konfirmasi Kata Sandi:</label>
-                    <input type="password" id="password-confirm" placeholder="Masukkan konfirmasi kata sandi" required
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-primary transition duration-200">
-                    <span class="toggle-icon" onclick="togglePasswordVisibility('password-confirm')">
-                        <i id="toggle-password-confirm-icon" class="fas fa-eye"></i>
-                    </span>
-                </div>
-                <button type="submit"
-                    class="w-full bg-button text-white py-2 rounded-lg hover:bg-yellow-500 transition-colors duration-300">
-                    Daftar
-                </button>
-                <p class="mt-4 text-center text-gray-600">Sudah punya akun? <a href="#login-section"
-                        class="text-primary font-bold">Masuk</a></p>
-            </form>
-        </div>
-    </div>
-
     <!-- Login Section -->
     <div id="login-section" class="min-h-screen flex items-center justify-center bg-gray-100 hidden z-50 fixed left-0 right-0 bottom-0 top-0">
         <div class="bg-white p-8 rounded-lg shadow-xl w-96">
@@ -722,6 +681,48 @@
             </form>
         </div>
     </div>
+
+        <!-- Form Register & Login -->
+        <div id="registration-section" class="min-h-screen flex items-center justify-center bg-gray-100 z-50 fixed left-0 right-0 bottom-0 top-0">
+          <div class="bg-white p-8 rounded-lg shadow-xl w-96">
+              <h2 class="text-2xl font-bold text-center mb-6">Daftar Akun</h2>
+              <form id="registration-form">
+                  <div class="mb-4">
+                      <label for="nama" class="block text-gray-700">Nama Lengkap:</label>
+                      <input type="text" id="nama" placeholder="Masukkan nama lengkap" required
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-primary transition duration-200">
+                  </div>
+                  <div class="mb-4">
+                      <label for="email" class="block text-gray-700">Email:</label>
+                      <input type="email" id="email" placeholder="Masukkan email" required
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-primary transition duration-200">
+                  </div>
+                  <div class="mb-4 relative">
+                      <label for="password" class="block text-gray-700">Kata Sandi:</label>
+                      <input type="password" id="password" placeholder="Masukkan kata sandi" required
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-primary transition duration-200">
+                      <span class="toggle-icon" onclick="togglePasswordVisibility('password')">
+                          <i id="toggle-password-icon" class="fas fa-eye"></i>
+                      </span>
+                  </div>
+                  <div class="mb-6 relative">
+                      <label for="password-confirm" class="block text-gray-700">Konfirmasi Kata Sandi:</label>
+                      <input type="password" id="password-confirm" placeholder="Masukkan konfirmasi kata sandi" required
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-primary transition duration-200">
+                      <span class="toggle-icon" onclick="togglePasswordVisibility('password-confirm')">
+                          <i id="toggle-password-confirm-icon" class="fas fa-eye"></i>
+                      </span>
+                  </div>
+                  <button type="submit"
+                      class="w-full bg-button text-white py-2 rounded-lg hover:bg-yellow-500 transition-colors duration-300">
+                      Daftar
+                  </button>
+                  <p class="mt-4 text-center text-gray-600">Sudah punya akun? <a href="#login-section"
+                          class="text-primary font-bold">Masuk</a></p>
+              </form>
+          </div>
+      </div>
+  
 
     <script>
         function togglePasswordVisibility(id) {
