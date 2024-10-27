@@ -73,7 +73,7 @@ document.getElementById('registration-form').addEventListener('submit', function
   const passwordConfirm = document.getElementById('password-confirm').value;
 
   if (password !== passwordConfirm) {
-    alert('Kata sandi dan konfirmasi kata sandi tidak cocok.');
+    alert('Kata sandi dan konfirmasi Kata Sandi tidak cocok!');
     return;
   }
 
@@ -117,7 +117,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
     document.getElementById('login-section').classList.add('hidden');
     document.getElementById('registration-section').classList.add('hidden')
   } else {
-    alert("Email atau kata sandi salah!")
+    alert("Email atau Kata Sandi salah!")
   }
   
 
