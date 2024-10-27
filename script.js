@@ -73,7 +73,7 @@ document.getElementById('registration-form').addEventListener('submit', function
   const passwordConfirm = document.getElementById('password-confirm').value;
 
   if (password !== passwordConfirm) {
-    alert('Kata sandi dan konfirmasi Kata Sandi tidak cocok!');
+    alert('Kata Sandi dan Konfirmasi Kata Sandi tidak cocok!');
     return;
   }
 
