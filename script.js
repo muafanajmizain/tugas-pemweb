@@ -117,7 +117,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
     document.getElementById('login-section').classList.add('hidden');
     document.getElementById('registration-section').classList.add('hidden')
   } else {
-    alert("Email / password salah!")
+    alert("Email atau kata sandi salah!")
   }
   
 
