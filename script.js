@@ -96,35 +96,56 @@ document.getElementById('registration-form').addEventListener('submit', function
 });
 
 // Script untuk Login
-document.getElementById('login-form').addEventListener('submit', function (event) {
+document.getElementById('login-form').addEventListener('submit', async function (event) {
   event.preventDefault(); // Mencegah pengiriman form secara default
 
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
 
-  // Cek data login melalui Mock API atau server
-  axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/login', {
-    email: email,
-    password: password
-  })
-    .then(function (response) {
-      if (response.data) {
-        // Di sini kamu bisa menyesuaikan logika untuk mengecek hasil respons
-        if (response.data.email === email && response.data.password === password) {
-          alert('Login berhasil!');
-          // Arahkan ke halaman utama website setelah login berhasil
-          document.getElementById('login-section').classList.add('hidden');
-          document.getElementById('registration-section').classList.add('hidden')
-        } else {
-          alert('Email atau kata sandi salah!');
-        }
-      } else {
-        alert('Email atau kata sandi salah!');
-      }
-    })
-    .catch(function (error) {
-      console.error('Terjadi kesalahan saat login:', error);
-    });
+  const getUser = await axios.get('https://6716607e3fcb11b265d22465.mockapi.io/api/login');
+  console.log(getUser.data);
+
+  let user = false
+  for(let i=0; i<getUser.data.length; i++) {
+    if(getUser.data[i].email === email && getUser.data[i].password === password){
+      user = true;
+    }
+  }
+
+  if(user){
+    // Arahkan ke halaman utama website setelah login berhasil
+    document.getElementById('login-section').classList.add('hidden');
+    document.getElementById('registration-section').classList.add('hidden')
+  } else {
+    alert("Email / password salah!")
+  }
+  
+
+  // // Cek data login melalui Mock API atau server
+  // await axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/login', {
+  //   email: email,
+  //   password: password
+  // })
+  //   .then(function (response) {
+      
+  //     if (response.data) {
+  //       // Di sini kamu bisa menyesuaikan logika untuk mengecek hasil respons
+  //       if (response.data.email === email && response.data.password === password) {
+  //         console.log(response.data.email, email, response.data.password, password);
+          
+  //         // Arahkan ke halaman utama website setelah login berhasil
+  //         document.getElementById('login-section').classList.add('hidden');
+  //         document.getElementById('registration-section').classList.add('hidden')
+  //       } else {
+  //         alert('Email atau kata sandi salah!');
+  //       }
+  //     } else {
+  //       alert('Email atau kata sandi salah!');
+  //     }
+  //   })
+  //   .catch(function (error) {
+  //     console.error('Terjadi kesalahan saat login:', error);
+  //   });
 });
 
 document.querySelector('a[href="#login-section"]').addEventListener('click', function() {
