@@ -657,33 +657,64 @@
 </head>
 <body>
 
-  <!-- Login Section -->
+ <!-- Login Section -->
 <div id="login-section" class="min-h-screen flex items-center justify-center bg-gray-50 hidden z-50 fixed inset-0">
   <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl w-full max-w-sm mx-4 transform transition duration-500 hover:scale-105">
-      <h2 class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6 text-gray-800">Masuk ke VentelaShoes</h2>
-      <form id="login-form">
-          <div class="mb-4">
-              <label for="login-email" class="block text-gray-600 font-semibold">Email:</label>
-              <input type="email" id="login-email" placeholder="Masukkan email" required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
-          </div>
-          <div class="mb-6 relative">
-              <label for="login-password" class="block text-gray-600 font-semibold">Kata Sandi:</label>
-              <input type="password" id="login-password" placeholder="Masukkan kata sandi" required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
-              <span class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500" onclick="togglePasswordVisibility('login-password')">
-                  <i id="toggle-login-password-icon" class="fas fa-eye"></i>
-              </span>
-          </div>
-          <button type="submit"
-              class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 shadow-md">
-              Masuk
-          </button>
-          <p class="mt-6 text-center text-gray-500">Belum punya akun? <a href="#registration-section"
-                  class="text-yellow-500 font-bold hover:underline">Daftar</a></p>
-      </form>
+    <h2 class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6 text-gray-800">Masuk ke VentelaShoes</h2>
+    <form id="login-form">
+      <div class="mb-4">
+        <label for="login-email" class="block text-gray-600 font-semibold">Email:</label>
+        <input type="email" id="login-email" placeholder="Masukkan email" required
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
+      </div>
+      <div class="mb-6 relative">
+        <label for="login-password" class="block text-gray-600 font-semibold">Kata Sandi:</label>
+        <input type="password" id="login-password" placeholder="Masukkan kata sandi" required
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
+        <span class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500" onclick="togglePasswordVisibility('login-password')">
+          <i id="toggle-login-password-icon" class="fas fa-eye"></i>
+        </span>
+      </div>
+      <button type="submit"
+        class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 shadow-md">
+        Masuk
+      </button>
+      <p class="mt-6 text-center text-gray-500">Belum punya akun? <a href="#registration-section"
+          class="text-yellow-500 font-bold hover:underline">Daftar</a></p>
+    </form>
+  </div>
+
+  <!-- Loading Animation -->
+  <div id="loading-animation" class="hidden fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+    <div class="loader"></div>
   </div>
 </div>
+
+<!-- CSS untuk animasi loading langsung di dalam HTML -->
+<style>
+  /* Loader animation */
+  .loader {
+    border: 4px solid transparent;
+    border-top-color: gray;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Styling tambahan */
+  #loading-animation.hidden {
+    display: none;
+  }
+</style>
+
+<!-- Include file JavaScript eksternal -->
+<script src="login.js"></script>
+
 
 <!-- Registration Section -->
 <div id="registration-section" class="min-h-screen flex items-center justify-center bg-gray-50 z-50 fixed inset-0">

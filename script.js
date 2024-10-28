@@ -95,31 +95,38 @@ document.getElementById('registration-form').addEventListener('submit', function
   
 });
 
-// Script untuk Login
 document.getElementById('login-form').addEventListener('submit', async function (event) {
-  event.preventDefault(); // Mencegah pengiriman form secara default
+  event.preventDefault();
+
+  // Tampilkan animasi loading
+  document.getElementById('loading-animation').classList.remove('hidden');
 
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
-
   const getUser = await axios.get('https://6716607e3fcb11b265d22465.mockapi.io/api/login');
   console.log(getUser.data);
-
-  let user = false
-  for(let i=0; i<getUser.data.length; i++) {
-    if(getUser.data[i].email === email && getUser.data[i].password === password){
+  let user = false;
+  for (let i = 0; i < getUser.data.length; i++) {
+    if (getUser.data[i].email === email && getUser.data[i].password === password) {
       user = true;
     }
   }
 
-  if(user){
-    // Arahkan ke halaman utama website setelah login berhasil
-    document.getElementById('login-section').classList.add('hidden');
-    document.getElementById('registration-section').classList.add('hidden')
-  } else {
-    alert("Email atau Kata Sandi salah!")
-  }
-  
+  //delay 3 detik menggunakan setTimeout
+  setTimeout(() => {
+    // Sembunyikan animasi loading setelah pengecekan selesai
+    document.getElementById('loading-animation').classList.add('hidden');
+
+    if (user) {
+      // Arahkan ke halaman utama website setelah login berhasil
+      document.getElementById('login-section').classList.add('hidden');
+      document.getElementById('registration-section').classList.add('hidden');
+    } else {
+      alert("Email atau Kata Sandi salah!");
+    }
+  }, 2000); // 3000 milidetik = 3 detik
+});
+
 
   // // Cek data login melalui Mock API atau server
   // await axios.post('https://6716607e3fcb11b265d22465.mockapi.io/api/login', {
@@ -146,7 +153,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
   //   .catch(function (error) {
   //     console.error('Terjadi kesalahan saat login:', error);
   //   });
-});
+
 
 document.querySelector('a[href="#login-section"]').addEventListener('click', function() {
   document.getElementById('registration-section').classList.add('hidden');
