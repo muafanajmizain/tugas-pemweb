@@ -124,7 +124,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
     } else {
       alert("Email atau Kata Sandi salah!");
     }
-  }, 2000); // 3000 milidetik = 3 detik
+  }, 1200); // 3000 milidetik = 3 detik
 });
 
 
