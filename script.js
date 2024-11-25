@@ -10,7 +10,6 @@ document.querySelector('.menu').addEventListener('click', function() {
     toggleContent.classList.add('hidden-menu');
   }
 });
-// }
 
 const whatsappButtons = document.querySelectorAll('.whatsappButton');
 whatsappButtons.forEach(button => {
@@ -112,7 +111,6 @@ document.getElementById('login-form').addEventListener('submit', async function 
     }
   }
 
-  //delay 3 detik menggunakan setTimeout
   setTimeout(() => {
     // Sembunyikan animasi loading setelah pengecekan selesai
     document.getElementById('loading-animation').classList.add('hidden');
