@@ -1,808 +1,1533 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="assets/LogoV.jpeg" />
-  <title>VentelaShoes</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: '#da373d',
-            primary: '#D2B48C',
-            secondary: '#F0F0F0',
-            colorText: '#475569',
-            button: '#FBAB2F'
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="assets/LogoV.jpeg" />
+    <title>VentelaShoes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              primary: "#D2B48C",
+              secondary: "#F0F0F0",
+              colorText: "#475569",
+              button: "#FBAB2F",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
           },
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          },
-        }
+        },
+      };
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y2CWZ0VDVY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    }
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2CWZ0VDVY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      gtag("js", new Date());
 
-    gtag('config', 'G-Y2CWZ0VDVY');
-  </script>
-</head>
-<body class="font-poppins">
-
-  <!-- background -->
-  <div class="fixed -z-10 background left-0 top-0 right-0 bottom-0">
-    <img src="assets/pattern.png" class="w-full h-full object-cover">
-  </div>
-
-  <!-- navbar -->
-  <div class="glass-effect bg-white/30 border-white/40 fixed left-10 top-2 right-10 z-10 rounded-full">
-    <div class="relative container mx-auto flex items-center justify-between py-[11px] px-5">
-      <div class="logo text-[30px] text-button font-bold flex items-center gap-x-2">
-        <img src="assets/LogoV2.png" alt="Logo" class="w-[60px] hidden md:block" style="width: 55px; height: 55px; border-radius: 50%; border: 2px solid #f6b400; display: block; margin: 0 auto;">
-        VentelaShoes
-      </div>
-      <nav class="hidden lg:flex font-medium items-center md:gap-x-5 lg:gap-x-9 text-slate-600">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#best-seller">Best Seller</a>
-        <a href="#products">Products</a>
-        <a href="#testimoni">Testimoni</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class=" bg-button px-5 py-1 rounded-full text-white">Contact</a>
-      </nav>
-      <div class="menu cursor-pointer w-[40px] h-[40px] bg-white flex lg:hidden items-center justify-center rounded-md">
-        <img src="assets/menu.svg" class="w-[30px]">
-      </div>
-      <div id="toggle-content" class="absolute right-5 top-16 w-[200px] rounded-lg bg-white py-3 ">
-        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#home">Home</a>
-        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#about">About</a>
-        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#best-seller">Best Seller</a>
-        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#products">Products</a>
-        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#testimoni">Testimoni</a>
-        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#faq">FAQ</a>
-        <a class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200" href="#contact">Contact</a>
-      </div>
+      gtag("config", "G-Y2CWZ0VDVY");
+    </script>
+  </head>
+  <body class="font-poppins">
+    <!-- background -->
+    <div class="fixed -z-10 background left-0 top-0 right-0 bottom-0">
+      <img src="assets/pattern.png" class="w-full h-full object-cover" />
     </div>
-  </div>
-  <!-- navbar end -->
 
-  <!-- hero section -->
-  <div id="home" class="hero py-9 pt-[75px] bg-transparent text-slate-900">
-    <div class="container p-5 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:h-[90vh] py-[200px] lg:py-0">
-      <div class="flex items-center justify-center lg:justify-start text-center lg:text-start">
-        <div class="title mb-9 lg:mb-0">
-          <h2 data-aos="fade-up" class="font-bold text-[50px] text-left">Upgrade <span class="text-button">Look</span>-mu <br> No Overprice.</h2>
-          <p data-aos="fade-up" data-aos-delay="50" class="text-[18px] my-5 font-medium text-left">Sempurnakan penampilan dirimu dengan snickers keren dari Ventelashoes Purwokerto, <br> 
-            Bangga buatan indonesia.</p>
-            
-  <!-- TAGLINE -->
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Tagline</title>
-       <style>
-       @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); 
-            
-        .tagline {
-        font-family: 'Bebas Neue', sans-serif; 
-        font-size: 2em; 
-        color: #000000; 
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
-        text-align: left; 
-        margin-top: 5px; 
-        font-style: italic; 
-        letter-spacing: 0.2px; 
-         }
-        </style>
-         </head>
-          <body>
-             <div class="tagline">GA LOKAL GA ASIKKK!</div>
-          </body>
-        </html>
-
-          <a href="#best-seller">
-            <div class="text-left">
-              <button data-aos="fade-up" data-aos-delay="100" class="px-5 py-2 font-medium bg-button text-white text-xl rounded-full">Beli Sekarang</button>
-            </div>            
-          </a>
+    <!-- navbar -->
+    <div
+      class="glass-effect bg-white/30 border-white/40 fixed left-10 top-2 right-10 z-10 rounded-full"
+    >
+      <div
+        class="relative container mx-auto flex items-center justify-between py-[11px] px-5"
+      >
+        <div
+          class="logo text-[30px] text-button font-bold flex items-center gap-x-2"
+        >
+          <img
+            src="assets/LogoV2.png"
+            alt="Logo"
+            class="w-[60px] hidden md:block"
+            style="
+              width: 55px;
+              height: 55px;
+              border-radius: 50%;
+              border: 2px solid #f6b400;
+              display: block;
+              margin: 0 auto;
+            "
+          />
+          VentelaShoes
         </div>
-      </div>
-      <div class="flex items-center justify-center">
-        <div class="box-image flex gap-2">
-          <div class="img-left mt-3">
-            <div data-aos="fade-up" class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg mt-8">
-              <img src="assets/products/1.jpg" class="w-full h-full object-cover">
-            </div>
-            <div data-aos="fade-up" data-aos-delay="50" class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
-              <img src="assets/products/2.jpg" class="w-full h-full object-cover">
-            </div>
-          </div>
-          <div class="img-right mt-[70px]">
-            <div data-aos="fade-up" data-aos-delay="100" class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
-              <img src="assets/products/3.jpeg" class="w-full h-full object-cover">
-            </div>
-            <div data-aos="fade-up" data-aos-delay="150" class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
-              <img src="assets/products/4.jpeg" class="w-full h-full object-cover">
-            </div>
-          </div>
+        <nav
+          class="hidden lg:flex font-medium items-center md:gap-x-5 lg:gap-x-9 text-slate-600"
+        >
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#best-seller">Best Seller</a>
+          <a href="#products">Products</a>
+          <a href="#testimoni">Testimoni</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact" class="bg-button px-5 py-1 rounded-full text-white"
+            >Contact</a
+          >
+        </nav>
+        <div
+          class="menu cursor-pointer w-[40px] h-[40px] bg-white flex lg:hidden items-center justify-center rounded-md"
+        >
+          <img src="assets/menu.svg" class="w-[30px]" />
+        </div>
+        <div
+          id="toggle-content"
+          class="absolute right-5 top-16 w-[200px] rounded-lg bg-white py-3"
+        >
+          <a
+            class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200"
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200"
+            href="#best-seller"
+            >Best Seller</a
+          >
+          <a
+            class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200"
+            href="#products"
+            >Products</a
+          >
+          <a
+            class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200"
+            href="#testimoni"
+            >Testimoni</a
+          >
+          <a
+            class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200"
+            href="#faq"
+            >FAQ</a
+          >
+          <a
+            class="px-3 py-1 font-medium border-s-2 border-brown-400 mb-1 hover:bg-slate-200"
+            href="#contact"
+            >Contact</a
+          >
         </div>
       </div>
     </div>
-  </div>
-  <!-- hero section end -->
+    <!-- navbar end -->
 
-  <!-- about section -->
-  <div id="about" class="about bg-white">
-    <div class="container p-5 px-5 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:h-screen">
-      <div class="flex items-center justify-center">
-        <div class="box-image flex gap-2">
-          <div class="img-left mt-5">
-            <div data-aos="fade-up" class="img border-[2px] border-secondary w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[240px] lg:h-[250px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg mt-12">
-              <img src="assets/products/32.png" class="w-full h-full object-cover">
-            </div>
-          </div>
-          <div data-aos="fade-up" data-aos-delay="50" class="img-right mt-[90px]">
-            <div class="img border-[2px] border-secondary w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[240px] lg:h-[250px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg">
-              <img src="assets/products/33.png" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex items-center">
-        <div class="title px-5">
-          <h2 data-aos="fade-up" class="font-bold text-[20px] sm:text-[30px] lg:text-[40px]">Selamat Datang di <span class="text-button">VentelashoesPurwokerto</span></h2>
-          <p data-aos="fade-up" class="text-[15px] sm:text-normal lg:text-[18px] my-5">VentelashoesPurwokerto adalah pilihan utama untuk para penggemar sepatu lokal. Kami menawarkan koleksi sepatu berkualitas tinggi 
-            dengan harga yang terjangkau untuk semua kalangan. Setiap sepatu dipilih secara hati-hati agar Anda bisa tampil stylish dengan kenyamanan maksimal. Tidak hanya menawarkan keunikan, kami juga memastikan setiap produk memberikan kepuasan terbaik bagi pelanggan.</p>
-          <button id="whatsappButton" data-aos="fade-up" class="whatsappButton px-7 py-2 font-medium bg-button text-white text-xl rounded-full mt-2">Buy Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- about section end -->
+    <!-- hero section -->
+    <div id="home" class="hero py-9 pt-[75px] bg-transparent text-slate-900">
+      <div
+        class="container p-5 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:h-[90vh] py-[200px] lg:py-0"
+      >
+        <div
+          class="flex items-center justify-center lg:justify-start text-center lg:text-start"
+        >
+          <div class="title mb-9 lg:mb-0">
+            <h2 data-aos="fade-up" class="font-bold text-[50px] text-left">
+              Upgrade <span class="text-button">Look</span>-mu <br />
+              No Overprice.
+            </h2>
+            <p
+              data-aos="fade-up"
+              data-aos-delay="50"
+              class="text-[18px] my-5 font-medium text-left"
+            >
+              Sempurnakan penampilan dirimu dengan snickers keren dari
+              Ventelashoes Purwokerto, <br />
+              Bangga buatan indonesia.
+            </p>
 
-  <!-- best seller section -->
-  <div id="best-seller" class="best-seller bg-secondary">
-    <div class="container p-5 mx-auto py-[100px]">
-      <h2 class="font-medium text-[30px] text-center mb-9">Best Sellers</h2>
-      <div class="list-product flex items-center flex-wrap justify-center gap-5">
-        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/5.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Low Grey</h4>
-            <p class="text-[15px]">Ukuran 39 <br> Insole 23 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp240.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/6.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela New Low Black</h4>
-            <p class="text-[15px]">Ukuran 38 <br> Insole 24 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp280.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/7.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Street Black</h4>
-            <p class="text-[15px]">Ukuran 40 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp200.000</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- best seller section end -->
-  
-  <!-- products section -->
-  <div id="products" class="products bg-white">
-    <div class="container p-5 mx-auto py-[100px]">
-      <h2 class="font-medium text-[30px] text-center mb-9">Products</h2>
-      <div class="list-product flex items-center justify-center flex-wrap gap-5">
-        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/8.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela New Publick Black</h4>
-            <p class="text-[15px]">Ukuran 40 <br> Insole 24 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp250.000</h5>
+            <!-- TAGLINE -->
+            <!DOCTYPE html>
+            <html lang="en">
+              <head>
+                <meta charset="UTF-8" />
+                <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1.0"
+                />
+                <title>Tagline</title>
+                <style>
+                  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+                  .tagline {
+                    font-family: "Bebas Neue", sans-serif;
+                    font-size: 2em;
+                    color: #000000;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+                    text-align: left;
+                    margin-top: 5px;
+                    font-style: italic;
+                    letter-spacing: 0.2px;
+                  }
+                </style>
+              </head>
+              <body>
+                <div class="tagline">GA LOKAL GA ASIKKK!</div>
+              </body>
+            </html>
+
+            <a href="#best-seller">
+              <div class="text-left">
+                <button
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  class="px-5 py-2 font-medium bg-button text-white text-xl rounded-full"
+                >
+                  Beli Sekarang
+                </button>
+              </div>
+            </a>
           </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/9.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Low Republic Natural</h4>
-            <p class="text-[15px]">Ukuran 39 <br> Insole 24 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp230.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/10.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Republic Low Cream</h4>
-            <p class="text-[15px]">Ukuran 40 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp270.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/11.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Reborn Reflective Blue</h4>
-            <p class="text-[15px]">Ukuran 39<br> Insole 24 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp255.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/12.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Alpha Low Grey Original</h4>
-            <p class="text-[15px]">Ukuran 39<br> Insole 23 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp270.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/13.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Alpha Low White Original</h4>
-            <p class="text-[15px]">Ukuran 38 <br> Insole 23 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp260.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/14.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Ethnic High Black Natural</h4>
-            <p class="text-[15px]">Ukuran 40 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp300.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/15.jpeg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Ethnic High Green Natural</h4>
-            <p class="text-[15px]">Ukuran 38 <br> Insole 23 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp300.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/16.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela X-NTL High Nevertoolavish</h4>
-            <p class="text-[15px]">Ukuran 40 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp290.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/17.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Republic High Grey</h4>
-            <p class="text-[15px]">Ukuran 38 <br> Insole 23 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp340.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/18.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Republic High Blue</h4>
-            <p class="text-[15px]">Ukuran 39 <br> Insole 23 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp350.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/19.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Republic High Cream</h4>
-            <p class="text-[15px]">Ukuran 39 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp340.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/20.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Public Low X-Jerome Polin</h4>
-            <p class="text-[15px]">Ukuran 39 <br> Insole 24 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp350.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/21.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Public Reborn Reflective Black</h4>
-            <p class="text-[15px]">Ukuran 39 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp300.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/22.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Public Low X-Evil</h4> 
-            <p class="text-[15px]">Ukuran 39 <br> Insole 23 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp300.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/23.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Republic Low White</h4>
-            <p class="text-[15px]">Ukuran 39 <br> Insole 24 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp210.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/24.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Republic High Green</h4>
-            <p class="text-[15px]">Ukuran 39 <br> Insole 23 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp370.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="150" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/25.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Republic High White</h4>
-            <p class="text-[15px]">Ukuran 40 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp370.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/26.jpg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Alpha Low Black Original</h4>
-            <p class="text-[15px]">Ukuran 40 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp250.000</h5>
-          </div>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="50" class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white">
-          <div class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="assets/products/4.jpeg" class="w-full h-full object-cover">
-          </div>
-          <div class="product-desc">
-            <h4 class="font-medium text-xl">Ventela Ethnic High Black Original</h4>
-            <p class="text-[15px]">Ukuran 40 <br> Insole 25 <br> Made in Indonesia</p>
-          </div>
-          <div class="flex items-center justify-between mt-3">
-            <button id="whatsappButton" class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2">Buy Now</button>
-            <h5 class="font-medium text-lg">Rp380.000</h5>
+        <div class="flex items-center justify-center">
+          <div class="box-image flex gap-2">
+            <div class="img-left mt-3">
+              <div
+                data-aos="fade-up"
+                class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg mt-8"
+              >
+                <img
+                  src="assets/products/1.jpg"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="50"
+                class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg"
+              >
+                <img
+                  src="assets/products/2.jpg"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div class="img-right mt-[70px]">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="100"
+                class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg"
+              >
+                <img
+                  src="assets/products/3.jpeg"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="150"
+                class="border-[3px] img w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[230px] lg:h-[240px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg"
+              >
+                <img
+                  src="assets/products/4.jpeg"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- products section end -->
+    <!-- hero section end -->
 
-  <!-- testimoni section -->
-  <div id="testimoni" class="testimoni bg-colorText">
-    <div class="container p-5 mx-auto py-[100px]">
-      <h2 class="font-medium text-[30px] text-center mb-9 text-white">Testimoni</h2>
-      <div class="list-testimoni flex flex-col justify-center items-center">
-        <div class="list-1 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:me-[100px]">
-          <div data-aos="fade-up" class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary">
-            <div class="profile flex items-center gap-2">
-              <div class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden">
-                <img src="assets/profile3.jpg" class="w-full h-full object-cover">
-                  </div>
+    <!-- about section -->
+    <div id="about" class="about bg-white">
+      <div
+        class="container p-5 px-5 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:h-screen"
+      >
+        <div class="flex items-center justify-center">
+          <div class="box-image flex gap-2">
+            <div class="img-left mt-5">
+              <div
+                data-aos="fade-up"
+                class="img border-[2px] border-secondary w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[240px] lg:h-[250px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg mt-12"
+              >
+                <img
+                  src="assets/products/32.png"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="50"
+              class="img-right mt-[90px]"
+            >
+              <div
+                class="img border-[2px] border-secondary w-[150px] h-[160px] sm:w-[200px] sm:h-[210px] lg:w-[240px] lg:h-[250px] rounded-lg bg-blue-600 mb-2 overflow-hidden shadow-lg"
+              >
+                <img
+                  src="assets/products/33.png"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="title px-5">
+            <h2
+              data-aos="fade-up"
+              class="font-bold text-[20px] sm:text-[30px] lg:text-[40px]"
+            >
+              Selamat Datang di
+              <span class="text-button">VentelashoesPurwokerto</span>
+            </h2>
+            <p
+              data-aos="fade-up"
+              class="text-[15px] sm:text-normal lg:text-[18px] my-5"
+            >
+              VentelashoesPurwokerto adalah pilihan utama untuk para penggemar
+              sepatu lokal. Kami menawarkan koleksi sepatu berkualitas tinggi
+              dengan harga yang terjangkau untuk semua kalangan. Setiap sepatu
+              dipilih secara hati-hati agar Anda bisa tampil stylish dengan
+              kenyamanan maksimal. Tidak hanya menawarkan keunikan, kami juga
+              memastikan setiap produk memberikan kepuasan terbaik bagi
+              pelanggan.
+            </p>
+            <button
+              id="whatsappButton"
+              data-aos="fade-up"
+              class="whatsappButton px-7 py-2 font-medium bg-button text-white text-xl rounded-full mt-2"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- about section end -->
+
+    <!-- best seller section -->
+    <div id="best-seller" class="best-seller bg-secondary">
+      <div class="container p-5 mx-auto py-[100px]">
+        <h2 class="font-medium text-[30px] text-center mb-9">Best Sellers</h2>
+        <div
+          class="list-product flex items-center flex-wrap justify-center gap-5"
+        >
+          <div
+            data-aos="fade-up"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/5.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Low Grey</h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 23 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp240.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/6.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela New Low Black</h4>
+              <p class="text-[15px]">
+                Ukuran 38 <br />
+                Insole 24 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp280.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="150"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/7.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Street Black</h4>
+              <p class="text-[15px]">
+                Ukuran 40 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp200.000</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- best seller section end -->
+
+    <!-- products section -->
+    <div id="products" class="products bg-white">
+      <div class="container p-5 mx-auto py-[100px]">
+        <h2 class="font-medium text-[30px] text-center mb-9">Products</h2>
+        <div
+          class="list-product flex items-center justify-center flex-wrap gap-5"
+        >
+          <div
+            data-aos="fade-up"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/8.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela New Publick Black</h4>
+              <p class="text-[15px]">
+                Ukuran 40 <br />
+                Insole 24 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp250.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="50"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/9.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Low Republic Natural</h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 24 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp230.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/10.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Republic Low Cream</h4>
+              <p class="text-[15px]">
+                Ukuran 40 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp270.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="150"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/11.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Reborn Reflective Blue
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 39<br />
+                Insole 24 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp255.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/12.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Alpha Low Grey Original
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 39<br />
+                Insole 23 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp270.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="50"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/13.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Alpha Low White Original
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 38 <br />
+                Insole 23 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp260.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/14.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Ethnic High Black Natural
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 40 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp300.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="150"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/15.jpeg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Ethnic High Green Natural
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 38 <br />
+                Insole 23 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp300.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/16.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela X-NTL High Nevertoolavish
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 40 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp290.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="50"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/17.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Republic High Grey</h4>
+              <p class="text-[15px]">
+                Ukuran 38 <br />
+                Insole 23 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp340.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/18.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Republic High Blue</h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 23 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp350.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="50"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/19.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Republic High Cream</h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp340.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/20.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Public Low X-Jerome Polin
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 24 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp350.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="150"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/21.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Public Reborn Reflective Black
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp300.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/22.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Public Low X-Evil</h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 23 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp300.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="50"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/23.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Republic Low White</h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 24 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp210.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/24.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Republic High Green</h4>
+              <p class="text-[15px]">
+                Ukuran 39 <br />
+                Insole 23 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp370.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="150"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/25.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">Ventela Republic High White</h4>
+              <p class="text-[15px]">
+                Ukuran 40 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp370.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/26.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Alpha Low Black Original
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 40 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp250.000</h5>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="50"
+            class="card p-2 w-[250px] rounded-lg border shadow-sm bg-white"
+          >
+            <div
+              class="img h-[230px] bg-slate-300 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src="assets/products/4.jpeg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="product-desc">
+              <h4 class="font-medium text-xl">
+                Ventela Ethnic High Black Original
+              </h4>
+              <p class="text-[15px]">
+                Ukuran 40 <br />
+                Insole 25 <br />
+                Made in Indonesia
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-3">
+              <button
+                id="whatsappButton"
+                class="whatsappButton px-4 py-1 font-medium bg-button text-white rounded-full mt-2"
+              >
+                Buy Now
+              </button>
+              <h5 class="font-medium text-lg">Rp380.000</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- products section end -->
+
+    <!-- testimoni section -->
+    <div id="testimoni" class="testimoni bg-colorText">
+      <div class="container p-5 mx-auto py-[100px]">
+        <h2 class="font-medium text-[30px] text-center mb-9 text-white">
+          Testimoni
+        </h2>
+        <div class="list-testimoni flex flex-col justify-center items-center">
+          <div
+            class="list-1 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:me-[100px]"
+          >
+            <div
+              data-aos="fade-up"
+              class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary"
+            >
+              <div class="profile flex items-center gap-2">
+                <div
+                  class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden"
+                >
+                  <img
+                    src="assets/profile3.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
                 <div class="profile-desc">
-              <h5 class="font-medium text-lg">Eka Firmani</h5>
-            <div class="rating flex items-center gap-1">Today</div>
-          </div>
-        </div>
-      <div class="text mt-2">
-    <p>Belanja di VentelashoesPurwokerto nggak pernah mengecewakan! Sepatunya selalu dalam kondisi bagus, Harganya juga ramah di kantong, pokoknya rekomendasi banget!</p>
-  </div>
-    </div>
-      <div data-aos="fade-up" data-aos-delay="50" class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary">
-        <div class="profile flex items-center gap-2">
-          <div class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden">
-            <img src="assets/profile3.jpg" class="w-full h-full object-cover">
+                  <h5 class="font-medium text-lg">Eka Firmani</h5>
+                  <div class="rating flex items-center gap-1">Today</div>
+                </div>
               </div>
-            <div class="profile-desc">
-          <h5 class="font-medium text-lg">Niken Tri</h5>
-        <div class="rating flex items-center gap-1">Yesterday</div>
-      </div>
-    </div>
-  <div class="text mt-2">
-    <p>Suka banget sama koleksi sepatu di VentelashoesPurwokerto! Barangnya selalu berkualitas, nyaman dipakai, dan modelnya jarang ada di pasaran. Pasti akan belanja lagi!</p>
-      </div>
-        </div>
-          </div>
-            <div class="list-2 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:ms-[100px] mt-2">
-              <div data-aos="fade-up" class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary">
-            <div class="profile flex items-center gap-2">
-          <div class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden">
-        <img src="assets/profile3.jpg" class="w-full h-full object-cover">
-      </div>
-    <div class="profile-desc">
-  <h5 class="font-medium text-lg">Eka Nurkhorisma</h5>
-    <div class="rating flex items-center gap-1">Today</div>
-      </div>
-        </div>
-          <div class="text mt-2">
-            <p>Pelayanannya cepat dan ramah, Sepatuku sampai tepat waktu dan sesuai deskripsi. Keren banget, VentelashoesPurwokerto emang Top dehh!</p>
-          </div>
-        </div>
-      <div data-aos="fade-up" data-aos-delay="50" class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary">
-    <div class="profile flex items-center gap-2">
-  <div class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden">
-    <img src="assets/profile3.jpg" class="w-full h-full object-cover">
-      </div>
-        <div class="profile-desc">
-          <h5 class="font-medium text-lg">Tias Sifani</h5>
-            <div class="rating flex items-center gap-1">Yesterday</div>
+              <div class="text mt-2">
+                <p>
+                  Belanja di VentelashoesPurwokerto nggak pernah mengecewakan!
+                  Sepatunya selalu dalam kondisi bagus, Harganya juga ramah di
+                  kantong, pokoknya rekomendasi banget!
+                </p>
               </div>
             </div>
-          <div class="text mt-2">
-        <p>Sepatu dari VentelashoesPurwokerto benar-benar berkualitas, nggak kalah sama yang baru. 
-          Aku bisa tampil stylish tanpa perlu keluar banyak uang. Highly recommended!</p>
-      </div>
-    </div>
-  </div>
-    </div>
-      </div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="50"
+              class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary"
+            >
+              <div class="profile flex items-center gap-2">
+                <div
+                  class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden"
+                >
+                  <img
+                    src="assets/profile3.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="profile-desc">
+                  <h5 class="font-medium text-lg">Niken Tri</h5>
+                  <div class="rating flex items-center gap-1">Yesterday</div>
+                </div>
+              </div>
+              <div class="text mt-2">
+                <p>
+                  Suka banget sama koleksi sepatu di VentelashoesPurwokerto!
+                  Barangnya selalu berkualitas, nyaman dipakai, dan modelnya
+                  jarang ada di pasaran. Pasti akan belanja lagi!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="list-2 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:ms-[100px] mt-2"
+          >
+            <div
+              data-aos="fade-up"
+              class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary"
+            >
+              <div class="profile flex items-center gap-2">
+                <div
+                  class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden"
+                >
+                  <img
+                    src="assets/profile3.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="profile-desc">
+                  <h5 class="font-medium text-lg">Eka Nurkhorisma</h5>
+                  <div class="rating flex items-center gap-1">Today</div>
+                </div>
+              </div>
+              <div class="text mt-2">
+                <p>
+                  Pelayanannya cepat dan ramah, Sepatuku sampai tepat waktu dan
+                  sesuai deskripsi. Keren banget, VentelashoesPurwokerto emang
+                  Top dehh!
+                </p>
+              </div>
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="50"
+              class="card-testimoni rounded-lg border shadow-sm p-2 w-[300px] lg:w-[400px] bg-secondary"
+            >
+              <div class="profile flex items-center gap-2">
+                <div
+                  class="profile-pic w-[40px] h-[40px] rounded-full bg-slate-300 overflow-hidden"
+                >
+                  <img
+                    src="assets/profile3.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="profile-desc">
+                  <h5 class="font-medium text-lg">Tias Sifani</h5>
+                  <div class="rating flex items-center gap-1">Yesterday</div>
+                </div>
+              </div>
+              <div class="text mt-2">
+                <p>
+                  Sepatu dari VentelashoesPurwokerto benar-benar berkualitas,
+                  nggak kalah sama yang baru. Aku bisa tampil stylish tanpa
+                  perlu keluar banyak uang. Highly recommended!
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-  <!-- testimoni section end -->
+      </div>
+    </div>
+    <!-- testimoni section end -->
 
-  <!-- FAQ section -->
-  <div id="faq" class="faq bg-white">
-    <div class="container p-5 mx-auto py-[50px]">
-      <h4 class="font-medium text-[30px] text-center mb-5">FAQ</h4>
+    <!-- FAQ section -->
+    <div id="faq" class="faq bg-white">
+      <div class="container p-5 mx-auto py-[50px]">
+        <h4 class="font-medium text-[30px] text-center mb-5">FAQ</h4>
         <div class="faq-box grid grid-cols-1 lg:grid-cols-2">
           <div class="left p-5">
             <div data-aos="fade-up" class="faq-item mb-5">
-              <h5 class="font-medium text-xl">Apakah ada program diskon atau promo khusus?</h5>
-            <p class="text-[15px]">Ya, VentelashoesPurwokerto sering mengadakan promosi dan diskon khusus untuk pelanggan.</p>
+              <h5 class="font-medium text-xl">
+                Apakah ada program diskon atau promo khusus?
+              </h5>
+              <p class="text-[15px]">
+                Ya, VentelashoesPurwokerto sering mengadakan promosi dan diskon
+                khusus untuk pelanggan.
+              </p>
+            </div>
+            <div data-aos="fade-up" class="faq-item mb-5">
+              <h5 class="font-medium text-xl">
+                Di mana saya bisa membeli sepatu Ventelashoes?
+              </h5>
+              <p class="text-[15px]">
+                Sepatu VentelashoesPurwokerto dapat dibeli langsung maupun
+                secara online melalui website resmi atau platform e-commerce.
+              </p>
+            </div>
+            <div data-aos="fade-up" class="faq-item mb-5">
+              <h5 class="font-medium text-xl">
+                Berapa kisaran harga sepatu Ventelashoes?
+              </h5>
+              <p class="text-[15px]">
+                Harga sepatu VentelashoesPurwokerto sangat terjangkau, mulai
+                dari Rp200.000.
+              </p>
+            </div>
           </div>
-        <div data-aos="fade-up" class="faq-item mb-5">
-        <h5 class="font-medium text-xl">Di mana saya bisa membeli sepatu Ventelashoes?</h5>
-      <p class="text-[15px]">Sepatu VentelashoesPurwokerto dapat dibeli langsung maupun secara online melalui website resmi atau platform e-commerce.</p>
-    </div>
-      <div data-aos="fade-up" class="faq-item mb-5">
-        <h5 class="font-medium text-xl">Berapa kisaran harga sepatu Ventelashoes?</h5>
-          <p class="text-[15px]">Harga sepatu VentelashoesPurwokerto sangat terjangkau, mulai dari Rp200.000.</p>
+          <div class="right p-5">
+            <div data-aos="fade-up" class="faq-item mb-5">
+              <h5 class="font-medium text-xl">
+                Bagaimana kualitas sepatu dari Ventelashoes?
+              </h5>
+              <p class="text-[15px]">
+                Sepatu VentelashoesPurwokerto terbuat dari bahan berkualitas
+                tinggi dan nyaman dipakai.
+              </p>
             </div>
-              </div>
-            <div class="right p-5">
-          <div data-aos="fade-up" class="faq-item mb-5">
-        <h5 class="font-medium text-xl">Bagaimana kualitas sepatu dari Ventelashoes?</h5>
-      <p class="text-[15px]">Sepatu VentelashoesPurwokerto terbuat dari bahan berkualitas tinggi dan nyaman dipakai.</p>
-    </div>
-      <div data-aos="fade-up" class="faq-item mb-5">
-        <h5 class="font-medium text-xl">Apakah Ventelashoes hanya untuk Laki-laki?</h5>
-          <p class="text-[15px]">Tidak, VentelashoesPurwokerto dibuat untuk melengkapi stylish laki-laki maupun perempuan.</p>
+            <div data-aos="fade-up" class="faq-item mb-5">
+              <h5 class="font-medium text-xl">
+                Apakah Ventelashoes hanya untuk Laki-laki?
+              </h5>
+              <p class="text-[15px]">
+                Tidak, VentelashoesPurwokerto dibuat untuk melengkapi stylish
+                laki-laki maupun perempuan.
+              </p>
             </div>
-              <div data-aos="fade-up" class="faq-item mb-5">
-            <h5 class="font-medium text-xl">Ukuran apa saja yang ada di Ventelashoes?</h5>
-          <p class="text-[15px]">Ukuran yang tersedia di VentelashoesPurwokerto mulai dari 36 hingga 40.</p>
+            <div data-aos="fade-up" class="faq-item mb-5">
+              <h5 class="font-medium text-xl">
+                Ukuran apa saja yang ada di Ventelashoes?
+              </h5>
+              <p class="text-[15px]">
+                Ukuran yang tersedia di VentelashoesPurwokerto mulai
+                dari 36 hingga 40.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  <!-- FAQ section end -->
+    <!-- FAQ section end -->
 
-  <!-- contact section -->
-  <div id="contact" class="contact bg-colorText text-white" style="height: 510px;">
-    <div class="container p-5 mx-auto py-[50px]"> <!-- Mengurangi padding vertikal -->
-      <h5 class="font-medium text-[30px] text-center mb-8">Contact</h5>
+    <!-- contact section -->
+    <div
+      id="contact"
+      class="contact bg-colorText text-white"
+      style="height: 510px"
+    >
+      <div class="container p-5 mx-auto py-[50px]">
+        <!-- Mengurangi padding vertikal -->
+        <h5 class="font-medium text-[30px] text-center mb-8">Contact</h5>
         <div class="flex flex-col justify-center items-center">
-          <div class="text-center mb-3"> <!-- Mengurangi jarak bawah pada elemen teks -->
+          <div class="text-center mb-3">
+            <!-- Mengurangi jarak bawah pada elemen teks -->
             <h5 data-aos="fade-up" class="font-medium text-2xl">Address</h5>
-              <h6 data-aos="fade-up" class="text-lg my-4 font-medium">KarangWangkal, Kec.Purwokerto, Kab.Banyumas</h6>
-                <p data-aos="fade-up">Sapphire Residence Karangwangkal Blok U Ruby No. 7, Jawa Tengah 53182</p>
-              <h6 data-aos="fade-up" style="font-weight: bold; color: white; margin-top: 16px;"> <!-- Menambahkan data-aos untuk animasi -->
-                    Kunjungi Social Media VentelaShoes dibawah ini atau klik 
-            <a href="http://www.VentelashoesPurwokerto.com" style="color: rgb(26, 67, 231); text-decoration: none;">www.VentelashoesPurwokerto.com</a></h6>
+            <h6 data-aos="fade-up" class="text-lg my-4 font-medium">
+              KarangWangkal, Kec.Purwokerto, Kab.Banyumas
+            </h6>
+            <p data-aos="fade-up">
+              Sapphire Residence Karangwangkal Blok U Ruby No. 7, Jawa Tengah
+              53182
+            </p>
+            <h6
+              data-aos="fade-up"
+              style="font-weight: bold; color: white; margin-top: 16px"
+            >
+              <!-- Menambahkan data-aos untuk animasi -->
+              Kunjungi Social Media VentelaShoes dibawah ini atau klik
+              <a
+                href="http://www.VentelashoesPurwokerto.com"
+                style="color: rgb(26, 67, 231); text-decoration: none"
+                >www.VentelashoesPurwokerto.com</a
+              >
+            </h6>
           </div>
-        <div data-aos="fade-up" class="social-media-contact flex flex-wrap px-15 md:px-0 items-center gap-x-[15px] mt-[10px]"> <!-- Jarak atas diatur -->
-      <div class="instagram flex items-center gap-x-2"><img src="assets/instagram.png" alt="" class="w-[20px] lg:w-[40px]">
-    <a href="https://www.instagram.com/ventela_purwokerto/" class="font-medium text-[14px] sm:text-normal">Instagram</a>
-  </div>
-    <div class="whatsappButton flex items-center gap-x-2">
-      <img src="assets/whatsapp.png" alt="" class="w-[20px] lg:w-[40px]">
-        <a href="#" class="font-medium text-[14px] sm:text-normal">Whatsapp</a>
-          </div>
-            <div class="shopee flex items-center gap-x-2"><img src="assets/shope.png" alt="" class="w-[30px] lg:w-[50px]">
-              <a href="https://shopee.co.id/ventela_purwokerto?smtt=0.92378651-1657340280.9" class="font-medium text-[14px] sm:text-normal">Shopee</a>
-                </div>
-              <div class="tiktok flex items-center gap-x-2"><img src="assets/tiktok.png" alt="" class="w-[20px] lg:w-[40px]">
-            <a href="https://www.tiktok.com/@ventelapurwokerto" class="font-medium text-[14px] sm:text-normal">Tiktok</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Login section -->
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Registration</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #eef2f3; 
-        }
-        .bg-button {
-            background-color: #f6b400; 
-        }
-        .focus\:ring-primary:focus {
-            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.5); 
-        }
-        button:hover {
-            background-color: #f6b400; 
-        }
-        /* Text and background styles */
-        h2 {
-            color: #333; 
-        }
-        .text-primary {
-            color: #f6b400; 
-        }
-        .text-primary:hover {
-            color: #f6b400; 
-        }
-        .border-primary {
-            border-color: #f6b400; 
-        }
-        /* Positioning the eye icon */
-        .toggle-icon {
-            position: absolute;
-            top: 70%; 
-            right: 1rem; 
-            transform: translateY(-50%); 
-            color: #888; 
-            cursor: pointer; 
-        }
-    </style>
-</head>
-<body>
-
- <!-- Login Section -->
-<div id="login-section" class="min-h-screen flex items-center justify-center bg-gray-50 hidden z-50 fixed inset-0">
-  <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl w-full max-w-sm mx-4 transform transition duration-500 hover:scale-105">
-    <h2 class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6 text-gray-800">Masuk ke VentelaShoes</h2>
-      <form id="login-form">
-        <div class="mb-4">
-          <label for="login-email" class="block text-gray-600 font-semibold">Email:</label>
-            <input type="email" id="login-email" placeholder="Masukkan email" required
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
-        </div>
-      <div class="mb-6 relative">
-    <label for="login-password" class="block text-gray-600 font-semibold">Kata Sandi:</label>
-  <input type="password" id="login-password" placeholder="Masukkan kata sandi" required
-  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
-    <span class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500" onclick="togglePasswordVisibility('login-password')">
-      <i id="toggle-login-password-icon" class="fas fa-eye"></i>
-        </span>
-          </div>
-            <button type="submit"
-          class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 shadow-md">Masuk
-        </button>
-      <p class="mt-6 text-center text-gray-500">Belum punya akun? <a href="#registration-section"
-    class="text-yellow-500 font-bold hover:underline">Daftar</a></p>
-  </form>
-    </div>
-
-  <!-- Loading Animation -->
-  <div id="loading-animation" class="hidden fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-    <div class="loader"></div>
-  </div>
-</div>
-
-<!-- CSS untuk animasi loading langsung di dalam HTML -->
-<style>
-  /* Loader animation */
-  .loader {
-    border: 4px solid transparent;
-    border-top-color: gray;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  /* Styling tambahan */
-  #loading-animation.hidden {
-    display: none;
-  }
-</style>
-
-<!-- Include file JavaScript eksternal -->
-<script src="login.js"></script>
-
-
-<!-- Registration Section -->
-<div id="registration-section" class="min-h-screen flex items-center justify-center bg-gray-50 z-50 fixed inset-0">
-  <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl w-full max-w-sm mx-4 transform transition duration-500 hover:scale-105">
-    <h2 class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6 text-gray-800">Daftar Akun</h2>
-      <form id="registration-form">
-        <div class="mb-4">
-          <label for="nama" class="block text-gray-600 font-semibold">Nama Lengkap:</label>
-            <input type="text" id="nama" placeholder="Masukkan nama lengkap" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
+          <div
+            data-aos="fade-up"
+            class="social-media-contact flex flex-wrap px-15 md:px-0 items-center gap-x-[15px] mt-[10px]"
+          >
+            <!-- Jarak atas diatur -->
+            <div class="instagram flex items-center gap-x-2">
+              <img
+                src="assets/instagram.png"
+                alt=""
+                class="w-[20px] lg:w-[40px]"
+              />
+              <a
+                href="https://www.instagram.com/ventela_purwokerto/"
+                class="font-medium text-[14px] sm:text-normal"
+                >Instagram</a
+              >
             </div>
-          <div class="mb-4">
-        <label for="email" class="block text-gray-600 font-semibold">Email:</label>
-      <input type="email" id="email" placeholder="Masukkan email" required
-    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
-  </div>
-<div class="mb-4 relative">
-  <label for="password" class="block text-gray-600 font-semibold">Kata Sandi:</label>
-    <input type="password" id="password" placeholder="Masukkan kata sandi" required
-      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
-        <span class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500" onclick="togglePasswordVisibility('password')">
-          <i id="toggle-password-icon" class="fas fa-eye"></i>
-            </span>
+            <div class="whatsappButton flex items-center gap-x-2">
+              <img
+                src="assets/whatsapp.png"
+                alt=""
+                class="w-[20px] lg:w-[40px]"
+              />
+              <a href="#" class="font-medium text-[14px] sm:text-normal"
+                >Whatsapp</a
+              >
+            </div>
+            <div class="shopee flex items-center gap-x-2">
+              <img src="assets/shope.png" alt="" class="w-[30px] lg:w-[50px]" />
+              <a
+                href="https://shopee.co.id/ventela_purwokerto?smtt=0.92378651-1657340280.9"
+                class="font-medium text-[14px] sm:text-normal"
+                >Shopee</a
+              >
+            </div>
+            <div class="tiktok flex items-center gap-x-2">
+              <img
+                src="assets/tiktok.png"
+                alt=""
+                class="w-[20px] lg:w-[40px]"
+              />
+              <a
+                href="https://www.tiktok.com/@ventelapurwokerto"
+                class="font-medium text-[14px] sm:text-normal"
+                >Tiktok</a
+              >
+            </div>
           </div>
-        <div class="mb-6 relative">
-      <label for="password-confirm" class="block text-gray-600 font-semibold">Konfirmasi Kata Sandi:</label>
-    <input type="password" id="password-confirm" placeholder="Masukkan konfirmasi kata sandi" required
-      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm">
-        <span class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500" onclick="togglePasswordVisibility('password-confirm')">
-          <i id="toggle-password-confirm-icon" class="fas fa-eye"></i>
-            </span>
-          </div>
-        <button type="submit"
-      class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 shadow-md">Daftar
-    </button>
-  <p class="mt-6 text-center text-gray-500">Sudah punya akun? <a href="#login-section" class="text-yellow-500 font-bold hover:underline">Masuk</a></p>
-    </form>
-      </div>
         </div>
+      </div>
+    </div>
 
+    <!-- Login Section -->
+    <div
+      id="login-section"
+      class="min-h-screen flex items-center justify-center bg-gray-50 hidden z-50 fixed inset-0"
+    >
+      <div
+        class="bg-white p-6 md:p-8 rounded-2xl shadow-xl w-full max-w-sm mx-4 transform transition duration-500 hover:scale-105"
+      >
+        <h2
+          class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6 text-gray-800"
+        >
+          Masuk ke VentelaShoes
+        </h2>
+        <form id="login-form">
+          <div class="mb-4">
+            <label for="login-email" class="block text-gray-600 font-semibold"
+              >Email:</label
+            >
+            <input
+              type="email"
+              id="login-email"
+              placeholder="Masukkan email"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm"
+            />
+          </div>
+          <div class="mb-6 relative">
+            <label
+              for="login-password"
+              class="block text-gray-600 font-semibold"
+              >Kata Sandi:</label
+            >
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Masukkan kata sandi"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm"
+            />
+            <span
+              class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
+              onclick="togglePasswordVisibility('login-password')"
+            >
+              <i id="toggle-login-password-icon" class="fas fa-eye"></i>
+            </span>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 shadow-md"
+          >
+            Masuk
+          </button>
+          <p class="mt-6 text-center text-gray-500">
+            Belum punya akun?
+            <a
+              href="#registration-section"
+              class="text-yellow-500 font-bold hover:underline"
+              >Daftar</a
+            >
+          </p>
+        </form>
+      </div>
+
+      <!-- Loading Animation -->
+      <div
+        id="loading-animation"
+        class="hidden fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50"
+      >
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <!-- Registration Section -->
+    <div
+      id="registration-section"
+      class="min-h-screen flex items-center justify-center bg-gray-50 z-50 fixed inset-0 hidden"
+    >
+      <div
+        class="bg-white p-6 md:p-8 rounded-2xl shadow-xl w-full max-w-sm mx-4 transform transition duration-500 hover:scale-105"
+      >
+        <h2
+          class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6 text-gray-800"
+        >
+          Daftar Akun
+        </h2>
+        <form id="registration-form">
+          <div class="mb-4">
+            <label for="nama" class="block text-gray-600 font-semibold"
+              >Nama Lengkap:</label
+            >
+            <input
+              type="text"
+              id="nama"
+              placeholder="Masukkan nama lengkap"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-600 font-semibold"
+              >Email:</label
+            >
+            <input
+              type="email"
+              id="email"
+              placeholder="Masukkan email"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm"
+            />
+          </div>
+          <div class="mb-4 relative">
+            <label for="password" class="block text-gray-600 font-semibold"
+              >Kata Sandi:</label
+            >
+            <input
+              type="password"
+              id="password"
+              placeholder="Masukkan kata sandi"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm"
+            />
+            <span
+              class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
+              onclick="togglePasswordVisibility('password')"
+            >
+              <i id="toggle-password-icon" class="fas fa-eye"></i>
+            </span>
+          </div>
+          <div class="mb-6 relative">
+            <label
+              for="password-confirm"
+              class="block text-gray-600 font-semibold"
+              >Konfirmasi Kata Sandi:</label
+            >
+            <input
+              type="password"
+              id="password-confirm"
+              placeholder="Masukkan konfirmasi kata sandi"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm"
+            />
+            <span
+              class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
+              onclick="togglePasswordVisibility('password-confirm')"
+            >
+              <i id="toggle-password-confirm-icon" class="fas fa-eye"></i>
+            </span>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 shadow-md"
+          >
+            Daftar
+          </button>
+          <p class="mt-6 text-center text-gray-500">
+            Sudah punya akun?
+            <a
+              href="#login-section"
+              class="text-yellow-500 font-bold hover:underline"
+              >Masuk</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        function togglePasswordVisibility(id) {
-            const input = document.getElementById(id);
-            const icon = document.getElementById(`toggle-${id}-icon`);
-            if (input.type === "password") {
-                input.type = "text";
-                icon.classList.remove("fa-eye");
-                icon.classList.add("fa-eye-slash");
-            } else {
-                input.type = "password";
-                icon.classList.remove("fa-eye-slash");
-                icon.classList.add("fa-eye");
-            }
-        }
+      AOS.init();
     </script>
-</body>
-</html>
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-</body>
+  </body>
 </html>
