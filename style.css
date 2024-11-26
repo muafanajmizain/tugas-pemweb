@@ -54,13 +54,14 @@
   display: none;
 }
 
-/* Eyeye */
 /* Positioning the eye icon */
 .toggle-icon {
   position: absolute;
-  top: 70%;
-  right: 1rem;
-  transform: translateY(-50%);
-  color: #888;
+  top: 50%; 
+  transform: translateY(-50%); 
+  right: 1rem; 
+  color: #888; 
   cursor: pointer;
+  margin-top: 10px;
 }
+

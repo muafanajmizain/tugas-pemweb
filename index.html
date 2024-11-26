@@ -12,6 +12,11 @@
       rel="stylesheet"
     />
     <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+    />
+
+    <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
@@ -1383,12 +1388,11 @@
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm"
             />
           </div>
+
           <div class="mb-6 relative">
-            <label
-              for="login-password"
-              class="block text-gray-600 font-semibold"
-              >Kata Sandi:</label
-            >
+            <label for="login-password" class="block text-gray-600 font-semibold">
+              Kata Sandi:
+            </label>
             <input
               type="password"
               id="login-password"
@@ -1398,11 +1402,12 @@
             />
             <span
               class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
-              onclick="togglePasswordVisibility('login-password')"
+              onclick="togglePasswordVisibility('login-password', 'toggle-login-password-icon')"
             >
               <i id="toggle-login-password-icon" class="fas fa-eye"></i>
             </span>
           </div>
+
           <button
             type="submit"
             class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 shadow-md"
@@ -1467,10 +1472,12 @@
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300 shadow-sm"
             />
           </div>
+
+
           <div class="mb-4 relative">
-            <label for="password" class="block text-gray-600 font-semibold"
-              >Kata Sandi:</label
-            >
+            <label for="password" class="block text-gray-600 font-semibold">
+              Kata Sandi:
+            </label>
             <input
               type="password"
               id="password"
@@ -1480,17 +1487,16 @@
             />
             <span
               class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
-              onclick="togglePasswordVisibility('password')"
+              onclick="togglePasswordVisibility('password', 'toggle-password-icon')"
             >
               <i id="toggle-password-icon" class="fas fa-eye"></i>
             </span>
           </div>
+          
           <div class="mb-6 relative">
-            <label
-              for="password-confirm"
-              class="block text-gray-600 font-semibold"
-              >Konfirmasi Kata Sandi:</label
-            >
+            <label for="password-confirm" class="block text-gray-600 font-semibold">
+              Konfirmasi Kata Sandi:
+            </label>
             <input
               type="password"
               id="password-confirm"
@@ -1500,11 +1506,13 @@
             />
             <span
               class="toggle-icon absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
-              onclick="togglePasswordVisibility('password-confirm')"
+              onclick="togglePasswordVisibility('password-confirm', 'toggle-password-confirm-icon')"
             >
               <i id="toggle-password-confirm-icon" class="fas fa-eye"></i>
             </span>
           </div>
+
+
           <button
             type="submit"
             class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 shadow-md"

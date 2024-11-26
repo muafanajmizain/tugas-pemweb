@@ -21,7 +21,7 @@ document.querySelector('.menu').addEventListener('click', function() {
 const whatsappButtons = document.querySelectorAll('.whatsappButton');
 whatsappButtons.forEach(button => {
   button.onclick = function() {
-    const phoneNumber = "6287790531215"; // Ganti dengan nomor telepon Anda
+    const phoneNumber = "6282328137106"; // Ganti dengan nomor telepon Anda
     const message = "Halo min, saya ingin bertanya tentang produk di VentelaShoes."; // Ganti dengan pesan default Anda
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -29,20 +29,21 @@ whatsappButtons.forEach(button => {
 });
 
 // Fungsi untuk toggle visibility password
-function togglePasswordVisibility(id) {
-  const input = document.getElementById(id);
-  const icon = document.getElementById(`toggle-${id}-icon`);
+function togglePasswordVisibility(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
 
-  if (input.type === 'password') {
-    input.type = 'text';
-    icon.classList.remove('fa-eye');
-    icon.classList.add('fa-eye-slash');
+  if (input.type === "password") {
+    input.type = "text"; // Ubah tipe input ke teks
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash"); // Ubah ikon ke "mata tertutup"
   } else {
-    input.type = 'password';
-    icon.classList.remove('fa-eye-slash');
-    icon.classList.add('fa-eye');
+    input.type = "password"; // Ubah tipe input kembali ke password
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye"); // Ubah ikon ke "mata terbuka"
   }
 }
+
 
 document.getElementById('login-form').addEventListener('submit', async function (event) {
   event.preventDefault();
@@ -106,7 +107,6 @@ document.getElementById('registration-form').addEventListener('submit', function
     });
   
 });
-
 
 document.querySelector('a[href="#login-section"]').addEventListener('click', function() {
   document.getElementById('registration-section').classList.add('hidden');
